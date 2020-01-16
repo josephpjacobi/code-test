@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
@@ -14,10 +14,16 @@ const ReverseString = ({ string }) => {
 
 //Display component contains the input and the Reserse String Component
 const Display = () => {
-  const string = 'Hello World';
+  const [input, setInput] = useState('');
+
+  const handleUserInput = event => {    
+    setInput(event.target.value);
+  };
+
   return (
     <div>
-      <ReverseString string={string}/>
+      <input type="text" value={input} onChange={handleUserInput}/>
+      <ReverseString string={input}/>
     </div>
   )
 }
