@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+//UserInput accepts a user input which is passed to the ReverseString component
+const UserInput = ({ newValue, handleInput }) => (
+    <input type="text" value={newValue} onChange={handleInput} />
+  )
+
 //ReverseString accepts a string as a prop and displays it in reverse
 const ReverseString = ({ string }) => {
   const stringInReverse = string.split("").reverse().join("")
@@ -22,7 +27,7 @@ const Display = () => {
 
   return (
     <div>
-      <input type="text" value={input} onChange={handleUserInput}/>
+      <UserInput newValue={input} handleInput={handleUserInput}/>
       <ReverseString string={input}/>
     </div>
   )
