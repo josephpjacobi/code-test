@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+
+//UserInput accepts a user input which is passed to the ReverseString component
+const UserInput = ({ newValue, handleInput }) => (
+    <input type="text" value={newValue} onChange={handleInput} />
+  )
 
 //ReverseString accepts a string as a prop and displays it in reverse
 const ReverseString = ({ string }) => {
@@ -14,10 +19,16 @@ const ReverseString = ({ string }) => {
 
 //Display component contains the input and the Reserse String Component
 const Display = () => {
-  const string = 'Hello World';
+  const [input, setInput] = useState('');
+
+  const handleUserInput = event => {    
+    setInput(event.target.value);
+  };
+
   return (
     <div>
-      <ReverseString string={string}/>
+      <UserInput newValue={input} handleInput={handleUserInput}/>
+      <ReverseString string={input}/>
     </div>
   )
 }
