@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* ReverseString Formatting */
+.reverse-str-container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+}

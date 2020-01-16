@@ -11,14 +11,15 @@ const UserInput = ({ newValue, handleInput }) => (
 const ReverseString = ({ string }) => {
   const stringInReverse = string.split("").reverse().join("")
   return (
-    <div>
+    <div className="reverse-str-container">
+      <h3>Your text in reverse:</h3>
       {stringInReverse}
     </div>
   )
 }
 
 //Display component contains the input and the Reserse String Component
-const Display = () => {
+const StringDisplay = () => {
   const [input, setInput] = useState('');
 
   const handleUserInput = event => {    
@@ -33,6 +34,6 @@ const Display = () => {
   )
 }
 
-ReactDOM.render(<Display />, document.querySelector('#root'));
+ReactDOM.render(<StringDisplay />, document.querySelector('#root'));
 
 
