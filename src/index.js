@@ -7,8 +7,15 @@ import './index.css';
 //MainDisplay is the hub for storing each component in the code test and the corresponding titles for each section
 const MainDisplay = () => {
   return (
-    <div>
-      <div>
+    <div className="main-container">
+      <div className="buffer">
+        <h1 className="center">CS Questions</h1>
+        
+      </div>
+      <div className="buffer">
+        <h1 className="center">JavaScript Questions</h1>
+      </div>
+      <div className="buffer">
         <h1 className="center">React Questions</h1>
         <StringDisplay />
         <DistanceDisplay/>
