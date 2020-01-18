@@ -2,9 +2,9 @@ import React from 'react';
 import './append-row.css';
 import appendRow from '../../helpers/append-row';
 
-export const DisplayTable = () => {
+export const TableDisplay = () => {
   return (
-    <div>
+    <div className="table-container">
       <table id="tbl" border="1">
         <tbody>
           <tr>
@@ -31,4 +31,4 @@ export const DisplayTable = () => {
   )
 }
 
-export default DisplayTable;
+export default TableDisplay;
