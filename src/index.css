@@ -17,3 +17,14 @@ code {
   justify-content: center;
   justify-items: center;
 }
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buffer {
+  padding: 25px 0px;
+}
