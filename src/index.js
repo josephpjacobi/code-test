@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import DisplayTable from './components/append-row/append-row.jsx';
 import StringDisplay from './components/string-display/string-display.jsx';
 import DistanceDisplay from './components/distance-display/distance-display.jsx';
 import './index.css';
@@ -14,6 +15,7 @@ const MainDisplay = () => {
       </div>
       <div className="buffer">
         <h1 className="center">JavaScript Questions</h1>
+        <DisplayTable />
       </div>
       <div className="buffer">
         <h1 className="center">React Questions</h1>
