@@ -8,8 +8,20 @@ export const DisplayTable = () => {
       <table id="tbl" border="1">
         <tbody>
           <tr>
-            <td>Joe</td>
-            <td>Jacobi</td>
+            <td>Row</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Row</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>Row</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Row</td>
+            <td>4</td>
           </tr>
         </tbody>
       </table>
