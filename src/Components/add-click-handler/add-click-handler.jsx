@@ -1,17 +1,11 @@
 import React from 'react';
 import './add-click-handler.css';
+import handleClick from '../../helpers/add-click-handler';
 
 export const ButtonDisplay = () => {
-
-  //this will be exported to the helper function 
-  const handleClick = () => {
-    console.log('hey, it worked!');
-  }
-
   return (
-    <button className="small-buffer" onClick={handleClick}>
-      Click Me!
-    </button>
+      <button id="btn" className="small-buffer" onClick={handleClick}>
+      Want to see a magic trick?</button>
   )
 }
 
