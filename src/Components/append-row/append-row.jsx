@@ -4,7 +4,7 @@ import appendRow from '../../helpers/append-row';
 
 export const TableDisplay = () => {
   return (
-    <div className="table-container">
+    <div className="table-container small-buffer">
       <table id="tbl" border="1">
         <tbody>
           <tr>

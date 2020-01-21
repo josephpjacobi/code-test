@@ -28,3 +28,8 @@ code {
 .buffer {
   padding: 25px 0px;
 }
+
+.stack {
+  display: flex;
+  flex-direction: column;
+}
