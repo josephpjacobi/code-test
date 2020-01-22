@@ -13,18 +13,18 @@ import './index.css';
 const MainDisplay = () => {
   return (
     <div className="main-container">
-      <div className="buffer center stack">
-        <h1 className="center stack">CS Questions</h1>
+      <div className="buffer center-stack">
+        <h1 className="center-stack">CS Questions</h1>
         <FrogDisplay />
       </div>
-      <div className="buffer center stack">
-        <h1 className="center stack">JavaScript Questions</h1>
+      <div className="buffer center-stack">
+        <h1 className="center-stack">JavaScript Questions</h1>
         <TableDisplay />
         <ButtonDisplay />
         <ArrayDisplay />
       </div>
-      <div className="buffer center stack">
-        <h1 className="center stack">React Questions</h1>
+      <div className="buffer center-stack">
+        <h1 className="center-stack">React Questions</h1>
         <StringDisplay />
         <DistanceDisplay/>
       </div>
