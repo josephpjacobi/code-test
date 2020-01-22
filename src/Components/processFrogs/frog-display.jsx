@@ -1,30 +1,12 @@
 import React, { useState } from 'react';
 import './frog-display.css';
+import calcTotal from '../../helpers/calc-total';
+import calcAverage from '../../helpers/calc-average';
 
 export const FrogDisplay = () => {
   const [numberOfDays, setNumberOfDays] = useState('');
   const [totalWeight, setTotal] = useState('');
   const [averageWeight, setAverage] = useState('')
-
-  const calcTotal = (num) => {
-     if (num <= 10) {
-       let total = 0;
-       for (let i = 1; i <= num; i++) {
-         total += i;
-       }
-       const communityWeight = total * 10;
-       return communityWeight;
-     } else {
-        const fullGrownFrogs = num - 10;
-        const communityWeight = (fullGrownFrogs * 100) + 550;
-        return communityWeight;
-     }
-  }
-  
-  const calcAverage = (total, frogs) => {
-    const averageWeight = total / frogs
-    return averageWeight;
-  }
 
   const validateInput = (input) => {
     return /^[0-9]*$/.test(input);
@@ -36,7 +18,7 @@ export const FrogDisplay = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (validateInput(numberOfDays)) {
+    if (!validateInput(numberOfDays)) {
       setTotal(calcTotal(numberOfDays));
       setAverage(calcAverage(calcTotal(numberOfDays), numberOfDays))
     } else {
