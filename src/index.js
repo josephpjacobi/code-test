@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import FrogDisplay from './components/processFrogs/frog-display.jsx'
 import TableDisplay from './components/append-row/append-row.jsx';
 import ButtonDisplay from './components/add-click-handler/add-click-handler.jsx';
 import ArrayDisplay from './components/array-filter/array-filter.jsx';
@@ -14,7 +15,7 @@ const MainDisplay = () => {
     <div className="main-container">
       <div className="buffer center stack">
         <h1 className="center stack">CS Questions</h1>
-        
+        <FrogDisplay />
       </div>
       <div className="buffer center stack">
         <h1 className="center stack">JavaScript Questions</h1>
