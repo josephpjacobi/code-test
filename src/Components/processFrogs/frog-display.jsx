@@ -7,22 +7,23 @@ export const FrogDisplay = () => {
   const [averageWeight, calcAverage] = useState('')
 
   const calculateTotalWeight = (num) => {
-      let total = 0;
-      for (let i = 1; i <= num; i++) {
-        total += i;
-      }
-      const communityWeight = total * 10;
-      console.log(communityWeight);
-      return communityWeight;
-    }
-  //   // if (num <= 10) {
-  //     const days = num;
-  //     let total = 0;
-  //     for(let frogs = 0; frogs <= days; frogs++) {
-  //       let total = total + days;
-  //     }
-  //     console.log(total)
-  // }
+     if (num <= 10) {
+       let total = 0;
+       for (let i = 1; i <= num; i++) {
+         total += i;
+       }
+       const communityWeight = total * 10;
+       console.log(communityWeight);
+       return communityWeight;
+     } else {
+        const fullGrownFrogs = num - 10;
+        const communityWeight = (fullGrownFrogs * 100) + 550;
+        console.log(communityWeight);
+        
+        return communityWeight;
+     }
+  } 
+      
   
   const handleChange = (event) => {
     setNumberOfDays(event.target.value);
