@@ -1,13 +1,13 @@
+// @flow
 import React from 'react';
 import ReactDOM from 'react-dom';
-import FrogDisplay from './components/processFrogs/frog-display.jsx'
+import FrogDisplay from './components/frog-display/frog-display.jsx'
 import TableDisplay from './components/append-row/append-row.jsx';
 import ButtonDisplay from './components/add-click-handler/add-click-handler.jsx';
 import ArrayDisplay from './components/array-filter/array-filter.jsx';
 import StringDisplay from './components/string-display/string-display.jsx';
 import DistanceDisplay from './components/distance-display/distance-display.jsx';
 import './index.css';
-
 
 //MainDisplay is the hub for storing each component in the code test and the corresponding titles for each section
 const MainDisplay = () => {

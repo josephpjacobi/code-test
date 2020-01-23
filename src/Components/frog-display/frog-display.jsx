@@ -13,31 +13,23 @@ export const FrogDisplay = () => {
   }
   
   const handleChange = (event) => {
-    setNumberOfDays(event.target.value);
-    
-    if (validateInput(numberOfDays)) {
-      setTotal(calcTotal(numberOfDays));
-      setAverage(calcAverage(calcTotal(numberOfDays), numberOfDays));
+    const userInput = event.target.value
+    setNumberOfDays(userInput);
+    if (validateInput(userInput)) {
+      setTotal(calcTotal(userInput));
+      setAverage(calcAverage(calcTotal(userInput), userInput));
     } else {
       alert('Only numbers are valid inputs');
       setNumberOfDays('');
     }
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    
-  }
-
   return (
     <div className="frog-data-container">
-      <form onSubmit={handleSubmit} className="form">
         <label>
           Enter Number of Days:
           <input type="type" value={numberOfDays} onChange={handleChange} />
         </label>
-        <input type="submit" value="Submit"/>
-      </form>
       <h4>{`Number of frogs: ${numberOfDays}`}</h4>
       <h4>{`The weight of the frog community on day ${numberOfDays} : ${totalWeight + ' grams'}`}</h4>
       <h4>{`The weight of the average frog on day ${numberOfDays}: ${averageWeight + ' grams'}`}</h4>
