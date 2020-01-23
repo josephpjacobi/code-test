@@ -7,6 +7,18 @@ const convertToRadians = (coordiante) => {
   return ((coordiante / 180) * pi)
 }
 
+const distanceInKM = (dLat, dLong, radLat1, radLat2) => {
+  return (RadiusKM * 2 *
+      asin(
+        sqrt(
+          pow(sin(dLat / 2), 2) +
+          pow(sin(dLong / 2), 2) *
+          cos(radLat1) * cos(radLat2)
+        )
+      ) * 100
+    ) / 100;
+}
+
 //Uses the Haversine formula to calculate the great-circle distance between the coordiantes derived from the zip codes
 //The result is converted to miles and rounded to the nearest whole number
 export const Haversine = (startingZip, endingZip) => {
@@ -25,18 +37,8 @@ export const Haversine = (startingZip, endingZip) => {
     //Difference in radians
     const dLat = (radLat2 - radLat1);
     const dLong = (radLong2 - radLong1);
-   
-
-    const distanceKM = (
-      RadiusKM * 2 *
-      asin(
-        sqrt(
-          pow(sin(dLat / 2), 2) +
-          pow(sin(dLong / 2), 2) *
-          cos(radLat1) * cos(radLat2)
-        )
-      ) * 100
-    ) / 100;
+    
+    const distanceKM = distanceInKM(dLat, dLong, radLat1, radLat2);
 
     //Converts distance from km to miles and rounds to the nearest whole number
     const distanceInMiles = round(distanceKM * .621);
