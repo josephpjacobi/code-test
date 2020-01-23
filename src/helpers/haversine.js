@@ -6,6 +6,8 @@ import { pi, round, asin, pow, sin, cos, sqrt } from 'mathjs';
 export const Haversine = (startingZip, endingZip) => {
   const zip1 = zipCodeData[startingZip];
   const zip2 = zipCodeData[endingZip];
+  //Radius of the earth in km
+  const RadiusKM = 6371;
 
   if (zip1 && zip2) {
     //convert degrees to radians
@@ -14,14 +16,13 @@ export const Haversine = (startingZip, endingZip) => {
     const radLat2 = (zip2.lat / 180) * pi;
     const radLong2 = (zip2.long / 180) * pi;
 
-    //Diffeence in radians
+    //Difference in radians
     const dLat = (radLat2 - radLat1);
     const dLong = (radLong2 - radLong1);
-    //Radius of the earth in km
-    const radiusKM = 6371;
+   
 
     const distanceKM = (
-      radiusKM * 2 *
+      RadiusKM * 2 *
       asin(
         sqrt(
           pow(sin(dLat / 2), 2) +
