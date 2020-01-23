@@ -1,8 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './frog-display.css';
+import calcTotal from '../../helpers/calc-total';
+import calcAverage from '../../helpers/calc-average';
 
-const FrogDisplay = () => {
+export const FrogDisplay = () => {
+  const [numberOfDays, setNumberOfDays] = useState('');
+  const [totalWeight, setTotal] = useState('');
+  const [averageWeight, setAverage] = useState('')
+
+  const validateInput = (input) => {
+    return /^[0-9]*$/.test(input);
+  }
+  
+  const handleChange = (event) => {
+      setNumberOfDays(event.target.value);
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (validateInput(numberOfDays)) {
+      setTotal(calcTotal(numberOfDays));
+      setAverage(calcAverage(calcTotal(numberOfDays), numberOfDays))
+    } else {
+      alert('Only numbers are valid inputs');
+      setNumberOfDays('');
+    }
+  }
+
   return (
-    <input type="text"/>
+    <div className="frog-data-container">
+      <form onSubmit={handleSubmit} className="form">
+        <label>
+          Enter Number of Days:
+          <input type="type" value={numberOfDays} onChange={handleChange} />
+        </label>
+        <input type="submit" value="Submit"/>
+      </form>
+      <h4>{`Number of frogs: ${numberOfDays}`}</h4>
+      <h4>{`The weight of the frog community on day ${numberOfDays} : ${totalWeight + ' grams'}`}</h4>
+      <h4>{`The weight of the average frog on day ${numberOfDays}: ${averageWeight + ' grams'}`}</h4>
+    </div>
   )
 }
+
+
+export default FrogDisplay;
