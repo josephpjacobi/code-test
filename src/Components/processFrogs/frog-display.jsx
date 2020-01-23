@@ -14,7 +14,7 @@ export const FrogDisplay = () => {
   
   const handleChange = (event) => {
     setNumberOfDays(event.target.value);
-    console.log(numberOfDays);
+    
     if (validateInput(numberOfDays)) {
       setTotal(calcTotal(numberOfDays));
       setAverage(calcAverage(calcTotal(numberOfDays), numberOfDays));
