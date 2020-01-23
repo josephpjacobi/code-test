@@ -13,18 +13,20 @@ export const FrogDisplay = () => {
   }
   
   const handleChange = (event) => {
-      setNumberOfDays(event.target.value);
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
+    setNumberOfDays(event.target.value);
+    console.log(numberOfDays);
     if (validateInput(numberOfDays)) {
       setTotal(calcTotal(numberOfDays));
-      setAverage(calcAverage(calcTotal(numberOfDays), numberOfDays))
+      setAverage(calcAverage(calcTotal(numberOfDays), numberOfDays));
     } else {
       alert('Only numbers are valid inputs');
       setNumberOfDays('');
     }
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    
   }
 
   return (

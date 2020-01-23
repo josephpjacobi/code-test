@@ -1,13 +1,15 @@
 import zipCodeData from '../data';
 import { pi, round, asin, pow, sin, cos, sqrt } from 'mathjs';
 
+const RadiusKM = 6371;
+
 //Uses the Haversine formula to calculate the great-circle distance between the coordiantes derived from the zip codes
 //The result is converted to miles and rounded to the nearest whole number
 export const Haversine = (startingZip, endingZip) => {
   const zip1 = zipCodeData[startingZip];
   const zip2 = zipCodeData[endingZip];
   //Radius of the earth in km
-  const RadiusKM = 6371;
+  
 
   if (zip1 && zip2) {
     //convert degrees to radians
