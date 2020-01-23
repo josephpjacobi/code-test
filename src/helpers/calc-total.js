@@ -1,16 +1,16 @@
-export const calcTotal = (num) => {
-  if (num <= 10) {
+export const calcTotal = (numberOfDays) => {
+  let communityWeight;
+  if (numberOfDays <= 10) {
     let total = 0;
-    for (let i = 1; i <= num; i++) {
+    for (let i = 1; i <= numberOfDays; i++) {
       total += i;
     }
-    const communityWeight = total * 10;
-    return communityWeight;
+    communityWeight = total * 10;
   } else {
-    const fullGrownFrogs = num - 10;
-    const communityWeight = (fullGrownFrogs * 100) + 550;
-    return communityWeight;
+    const fullGrownFrogs = numberOfDays - 10;
+    communityWeight = (fullGrownFrogs * 100) + 550;
   }
+  return communityWeight;
 }
 
 export default calcTotal;

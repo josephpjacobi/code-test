@@ -3,6 +3,10 @@ import { pi, round, asin, pow, sin, cos, sqrt } from 'mathjs';
 
 const RadiusKM = 6371;
 
+const convertToRadians = (coordiante) => {
+  return ((coordiante / 180) * pi)
+}
+
 //Uses the Haversine formula to calculate the great-circle distance between the coordiantes derived from the zip codes
 //The result is converted to miles and rounded to the nearest whole number
 export const Haversine = (startingZip, endingZip) => {
@@ -13,10 +17,10 @@ export const Haversine = (startingZip, endingZip) => {
 
   if (zip1 && zip2) {
     //convert degrees to radians
-    const radLat1 = (zip1.lat / 180) * pi;
-    const radLong1 = (zip1.long / 180) * pi;
-    const radLat2 = (zip2.lat / 180) * pi;
-    const radLong2 = (zip2.long / 180) * pi;
+    const radLat1 = convertToRadians(zip1.lat);
+    const radLong1 = convertToRadians(zip1.long);
+    const radLat2 = convertToRadians(zip2.lat);
+    const radLong2 = convertToRadians(zip2.long);
 
     //Difference in radians
     const dLat = (radLat2 - radLat1);
