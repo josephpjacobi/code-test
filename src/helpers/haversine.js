@@ -1,13 +1,13 @@
 import zipCodeData from '../data';
 import { pi, round, asin, pow, sin, cos, sqrt } from 'mathjs';
-
+//Radius of the earth in km
 const RadiusKM = 6371;
 
-const convertToRadians = (coordiante) => {
+export const convertToRadians = (coordiante) => {
   return ((coordiante / 180) * pi)
 }
 
-const distanceInKM = (dLat, dLong, radLat1, radLat2) => {
+export const distanceInKM = (dLat, dLong, radLat1, radLat2) => {
   return (RadiusKM * 2 *
       asin(
         sqrt(
@@ -24,8 +24,6 @@ const distanceInKM = (dLat, dLong, radLat1, radLat2) => {
 export const Haversine = (startingZip, endingZip) => {
   const zip1 = zipCodeData[startingZip];
   const zip2 = zipCodeData[endingZip];
-  //Radius of the earth in km
-  
 
   if (zip1 && zip2) {
     //convert degrees to radians
@@ -39,7 +37,7 @@ export const Haversine = (startingZip, endingZip) => {
     const dLong = (radLong2 - radLong1);
     
     const distanceKM = distanceInKM(dLat, dLong, radLat1, radLat2);
-
+    
     //Converts distance from km to miles and rounds to the nearest whole number
     const distanceInMiles = round(distanceKM * .621);
     return `The distance between ${zip1.city}, ${zip1.state} and ${zip2.city}, ${zip2.state} is ${distanceInMiles} miles!`;
